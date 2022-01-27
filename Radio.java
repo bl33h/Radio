@@ -2,7 +2,6 @@
 public interface Radio {
     //Metodos
     public void encenderApagar(); // Cambia el estado encendido/apagado
-    public boolean comprobarEncendido();
     public String guardarEmisoraActual(int numBoton); // Guarda la emisora como favorita en el botón indicado (array de 12 espacios).
     public String seleccionarEmisoraGuardada(int numBoton); // Reproduce la emisora guardada en uno de los 12 botones.
     public String cambiarSenal(Boolean opcion); //true: AM // false:FM
