@@ -1,10 +1,13 @@
-
 import java.util.Scanner;
 public class Vista{
-    Scanner scan = new Scanner(System.in);
+    private Scanner scan;
 
     public void bienvenida() {
         System.out.println("-------------Bienvenido a su radio---------------- ");
+    }
+
+    public Vista(){
+        scan = new Scanner(System.in);
     }
 
     public int menu(){
@@ -28,6 +31,7 @@ public class Vista{
             isNumeric = tmpTexto.chars().allMatch( Character::isDigit );
             if (isNumeric && !tmpTexto.isEmpty()){
                 numMenu = Integer.parseInt(tmpTexto);
+                salir = "si";
             }
             while (tmpTexto.isEmpty()||!isNumeric || numMenu < 1 || numMenu > 7) {
                 System.out.println("  * Debe ingresar una opcion de menu mayor que 0" + " o menor que 7");
@@ -36,19 +40,20 @@ public class Vista{
                 numMenu = 0;
                 if (isNumeric&&!tmpTexto.isEmpty()){
                     numMenu = Integer.parseInt(tmpTexto);
-                    if(numMenu==7){
-                        salir="si";
-                        System.exit(0);
+                    salir = "si";
                     }
                 }
             }
-        }
         return numMenu;
+    }
+    public void salir(){
+        System.out.println(" ------------ Gracias por utilizar nuestro programa ------------ ");
+        System.exit(0);
+        scan.close();
     }
     public void errorMenu(){
         System.out.println("  * Debe ingresar una opcion de menu mayor que 0" + " o menor que 7");
     }
     public void encenderApagar(){
-        
     }
 }

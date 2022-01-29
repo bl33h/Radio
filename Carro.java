@@ -7,6 +7,25 @@ public class Carro implements Radio{
     private float FMactual;
     private ArrayList<String> emisorasGuardadas = new ArrayList<String>();
     private int numBoton;
+    
+    public Carro(){
+        encendido = false;
+
+    }
+    @Override
+    public void encenderApagar() {
+        if(encendido == false){
+            encendido = true;
+        }
+        else{
+            encendido = false;
+        }
+
+    }
+    @Override
+    public boolean comprobarEncendida() {
+        return encendido;
+    }
     @Override
     public void bajarEmisora() {
         // TODO Auto-generated method stub
@@ -15,15 +34,6 @@ public class Carro implements Radio{
     public String cambiarSenal(Boolean opcion) {
         // TODO Auto-generated method stub
         return null;
-    }
-    @Override
-    public boolean comprobarEncendida() {
-        // TODO Auto-generated method stub
-        return false;
-    }
-    @Override
-    public void encenderApagar() {
-        // TODO Auto-generated method stub
     }
     @Override
     public float getEmisoraActual() {

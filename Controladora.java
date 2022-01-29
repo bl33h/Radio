@@ -2,8 +2,8 @@
 public class Controladora{
     public static void main(String[] args) {
         //Atributos
-        boolean encendido = false; // Determina el estado de la radio, true (encendido) y false (apagado). 
-        boolean tipoSenal = false; // (true: AM// false: FM)
+        boolean encendido; // Determina el estado de la radio, true (encendido) y false (apagado).
+        boolean tipoSenal; // (true: AM// false: FM)
         float AMactual;
         float FMactual;
         String[] emisorasGuardadas = new String[12];
@@ -12,29 +12,33 @@ public class Controladora{
         Vista miVista = new Vista();
 
         miVista.bienvenida();
-        numMenu = miVista.menu();
-        while (numMenu < 0 || numMenu > 7){
-            miVista.errorMenu();
-        }
-        switch (numMenu) {
-            case 1:
-            miVista.encenderApagar();
-            break;
-            case 2:
+        numMenu = -1;
+        while(numMenu != 7){
+            numMenu = miVista.menu();
+            switch (numMenu) {
+                case 1:
+                miVista.encenderApagar();
+                break;
+                case 2:
 
-            break;
-            case 3:
+                break;
+                case 3:
 
-            break;
-            case 4:
+                break;
+                case 4:
 
-            break;
-            case 5:
+                break;
+                case 5:
 
-            break;
-            case 6:
+                break;
+                case 6:
 
-            break;
+                break;
+                case 7:
+                miVista.salir();
+                break;
+
+            }
         }
 
     }
