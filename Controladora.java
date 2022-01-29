@@ -55,10 +55,8 @@ public class Controladora{
                 break;
                 case 5: // Guardar Emisora
                     if(miCarro.comprobarEncendida() == true){
-                        while(numMenu1 != 12){
                             numMenu1 = miVista.menu1();
                             miCarro.guardarEmisoraActual(numMenu1);
-                        }
                     }
                     else{
                         miVista.mensaje("Su radio se encuentra apagada porfavor prenderla para usar esta opcion");
