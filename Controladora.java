@@ -9,30 +9,69 @@ public class Controladora{
         String[] emisorasGuardadas = new String[12];
         int numBoton;
         int numMenu;
+        int numMenu1;
+        String salir;
         Vista miVista = new Vista();
+        Carro miCarro = new Carro();
 
         miVista.bienvenida();
         numMenu = -1;
         while(numMenu != 7){
             numMenu = miVista.menu();
+            numMenu1 = -1;
             switch (numMenu) {
-                case 1:
-                miVista.encenderApagar();
+                case 1: // Encender / apagar radio
+                    miCarro.encenderApagar();
+                    if(miCarro.comprobarEncendida() == true){
+                        miVista.mensaje("Su radio se ha prendido con exito prendiendo");
+                    }
+                    else{
+                        miVista.mensaje("Su radio se ha apagado con exito apagando");
+                    }
                 break;
-                case 2:
-
+                case 2:// Cambiar de AM a FM / FM a AM
+                    if(miCarro.comprobarEncendida() == true){
+                        miVista.mensaje(miCarro.cambiarSenal(miCarro.getTipoSenal()));
+                    }
+                    else{
+                        miVista.mensaje("Su radio se encuentra apagada porfavor prenderla para usar esta opcion");
+                    }
                 break;
-                case 3:
+                case 3: // Avanzar la emisora
+                    if(miCarro.comprobarEncendida() == true){
 
+                    }
+                    else{
+                        miVista.mensaje("Su radio se encuentra apagada porfavor prenderla para usar esta opcion");
+                    }
                 break;
-                case 4:
+                case 4: // Retroceder la emisora
+                    if(miCarro.comprobarEncendida() == true){
 
+                    }
+                    else{
+                        miVista.mensaje("Su radio se encuentra apagada porfavor prenderla para usar esta opcion");
+                    }
                 break;
-                case 5:
-
+                case 5: // Guardar Emisora
+                    if(miCarro.comprobarEncendida() == true){
+                        while(numMenu1 != 12){
+                            numMenu1 = miVista.menu1();
+                            miCarro.guardarEmisoraActual(numMenu1);
+                        }
+                    }
+                    else{
+                        miVista.mensaje("Su radio se encuentra apagada porfavor prenderla para usar esta opcion");
+                    }
                 break;
-                case 6:
-
+                case 6: // Seleccionar Emisora de algun boton
+                    if(miCarro.comprobarEncendida() == true){
+                            numMenu1 = miVista.menu1();
+                            miCarro.seleccionarEmisoraGuardada(numMenu1);
+                    }
+                    else{
+                        miVista.mensaje("Su radio se encuentra apagada porfavor prenderla para usar esta opcion");
+                    }
                 break;
                 case 7:
                 miVista.salir();
