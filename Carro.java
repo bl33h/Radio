@@ -12,7 +12,7 @@ public class Carro implements Radio{
     private boolean tipoSenal;
     private float AMactual;
     private float FMactual;
-    private ArrayList<String> emisorasGuardadas = new ArrayList<String>();
+    private String[] emisorasGuardadas=new String[12];
     private int numBoton;
     public Carro(){
         encendido = false;
@@ -33,14 +33,17 @@ public class Carro implements Radio{
     public boolean comprobarEncendida() {
         return encendido;
     }
+
     @Override
     public void subirEmisora() {
 
     }
+
     @Override
     public void bajarEmisora() {
         // TODO Auto-generated method stub
     }
+
     @Override
     public String cambiarSenal(Boolean opcion) {
         String texto = "";
@@ -54,19 +57,33 @@ public class Carro implements Radio{
         }
         return texto;
     }
+
     @Override
     public float getEmisoraActual() {
         return numBoton;
     }
+
     @Override
     public Boolean getTipoSenal() {
         return tipoSenal;
     }
+
     @Override
     public String guardarEmisoraActual(int numBoton) {
-        String texto = "";
-        return texto;
+        String emisora = "";
+        String senal = "";
+        if(tipoSenal){
+            emisora = String.valueOf(this.AMactual);
+            senal = "AM";
+        }
+            else{
+            emisora = String.valueOf(this.FMactual);
+            senal = "FM";
+        }
+        emisorasGuardadas[numBoton] = emisora;
+        return "Se ha guardado la emisora: " + emisora + senal + "en el boton " + numBoton;
     }
+
     @Override
     public String seleccionarEmisoraGuardada(int numBoton) {
 

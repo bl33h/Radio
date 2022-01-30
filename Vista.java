@@ -94,7 +94,7 @@ public class Vista{
                 salir = "si";
             }
             while (tmpTexto.isEmpty()||!isNumeric || numMenu1 < 1 || numMenu1 > 12) {
-                System.out.println("  * Debe ingresar una opcion de menu mayor que 0" + " o menor que 12");
+                System.out.println("Error, ingresar una opcion de menu mayor que 0" + " o menor que 12");
                 tmpTexto = scan.nextLine();
                 isNumeric = tmpTexto.chars().allMatch( Character::isDigit );
                 numMenu1 = 0;

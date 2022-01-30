@@ -40,7 +40,7 @@ public class Controladora{
                         miVista.mensaje(miCarro.cambiarSenal(miCarro.getTipoSenal()));
                     }
                     else{
-                        miVista.mensaje("Su radio se encuentra apagada porfavor prenderla para usar esta opcion");
+                        miVista.mensaje("Su radio se encuentra apagada , por favor prenderla para usar esta opcion");
                     }
                 break;
                 case 3: // Avanzar la emisora
@@ -48,7 +48,7 @@ public class Controladora{
 
                     }
                     else{
-                        miVista.mensaje("Su radio se encuentra apagada porfavor prenderla para usar esta opcion");
+                        miVista.mensaje("Su radio se encuentra apagada, por favor prenderla para usar esta opcion");
                     }
                 break;
                 case 4: // Retroceder la emisora
@@ -56,7 +56,7 @@ public class Controladora{
 
                     }
                     else{
-                        miVista.mensaje("Su radio se encuentra apagada porfavor prenderla para usar esta opcion");
+                        miVista.mensaje("Su radio se encuentra apagada, por favor prenderla para usar esta opcion");
                     }
                 break;
                 case 5: // Guardar Emisora
@@ -65,7 +65,7 @@ public class Controladora{
                             miCarro.guardarEmisoraActual(numMenu1);
                     }
                     else{
-                        miVista.mensaje("Su radio se encuentra apagada porfavor prenderla para usar esta opcion");
+                        miVista.mensaje("Su radio se encuentra apagada, por favor prenderla para usar esta opcion");
                     }
                 break;
                 case 6: // Seleccionar Emisora de algun boton
@@ -74,7 +74,7 @@ public class Controladora{
                             miCarro.seleccionarEmisoraGuardada(numMenu1);
                     }
                     else{
-                        miVista.mensaje("Su radio se encuentra apagada porfavor prenderla para usar esta opcion");
+                        miVista.mensaje("Su radio se encuentra apagada, por favor prenderla para usar esta opcion");
                     }
                 break;
                 case 7:
