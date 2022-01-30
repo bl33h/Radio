@@ -32,7 +32,7 @@ public class Vista{
             System.out.println("5. Guardar emisora");
             System.out.println("6. Seleccionar emisora de algun boton");
             System.out.println("7. Salir");
-            System.out.println("\n************ Porfavor elija la opcion que desea ejecutar **********\n");
+            System.out.println("\n************ Por, favor elija la opcion que desea ejecutar **********\n");
             tmpTexto = scan.nextLine();
             //Se verifica que el número que dio el usuario fue valido
             isNumeric = tmpTexto.chars().allMatch( Character::isDigit );
@@ -41,7 +41,7 @@ public class Vista{
                 salir = "si";
             }
             while (tmpTexto.isEmpty()||!isNumeric || numMenu < 1 || numMenu > 7) {
-                System.out.println("  * Debe ingresar una opcion de menu mayor que 0" + " o menor que 7");
+                System.out.println("ERROR, ingresar una opcion de menu mayor que 0" + " o menor que 7");
                 tmpTexto = scan.nextLine();
                 isNumeric = tmpTexto.chars().allMatch( Character::isDigit );
                 numMenu = 0;
@@ -59,7 +59,7 @@ public class Vista{
         scan.close();
     }
     public void errorMenu(){
-        System.out.println("  * Debe ingresar una opcion de menu mayor que 0" + " o menor que 7");
+        System.out.println("ERROR, ingresar una opcion de menu mayor que 0" + " o menor que 7");
     }
     public void mensaje(String mensaje){
         System.out.println(mensaje);
