@@ -1,4 +1,10 @@
-
+/**
+ * Copyright (C), 2022-2023, FabianJuarez SaraEcheverria
+ * FileName: Radio
+ * Author:   Fabián Juárez , Sara Echeverria
+ * Date:     30/01/2022
+ * @author Fabian Juarez y Sara Echeverria
+ */
 public interface Radio {
     //Metodos
     public void encenderApagar(); // Cambia el estado encendido/apagado

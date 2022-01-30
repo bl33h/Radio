@@ -1,3 +1,10 @@
+/**
+ * Copyright (C), 2022-2023, FabianJuarez SaraEcheverria
+ * FileName: Vista
+ * Author:   Fabián Juárez , Sara Echeverria
+ * Date:     30/01/2022
+ * @author Fabian Juarez y Sara Echeverria
+ */
 import java.util.ArrayList;
 
 public class Carro implements Radio{

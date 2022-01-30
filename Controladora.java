@@ -1,4 +1,10 @@
-
+/**
+ * Copyright (C), 2022-2023, FabianJuarez SaraEcheverria
+ * FileName: Controladora
+ * Author:   Fabián Juárez , Sara Echeverria
+ * Date:     30/01/2022
+ * @author Fabian Juarez y Sara Echeverria
+ */
 public class Controladora{
     public static void main(String[] args) {
         //Atributos

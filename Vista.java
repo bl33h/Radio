@@ -1,9 +1,16 @@
+/**
+ * Copyright (C), 2022-2023, FabianJuarez SaraEcheverria
+ * FileName: Vista
+ * Author:   Fabián Juárez , Sara Echeverria
+ * Date:     30/01/2022
+ * @author Fabian Juarez y Sara Echeverria
+ */
 import java.util.Scanner;
 public class Vista{
     private Scanner scan;
 
     public void bienvenida() {
-        System.out.println("-------------Bienvenido a su radio---------------- ");
+        System.out.println("-------------Bienvenido/bienvenida a su radio---------------- ");
     }
 
     public Vista(){
@@ -17,15 +24,15 @@ public class Vista{
         boolean isNumeric = false;
         while(!salir.equalsIgnoreCase("si")){
             //Se imprime el menu en pantalla y se le pide al usuario un número del menú
-            System.out.println("\n************************* Que desea realizar ************************************\n");
+            System.out.println("\n************************* Funciones de su radio ************************************\n");
             System.out.println("1. Encender/apagar el radio");
-            System.out.println("2. Cambiar de AM a FM / FM a AM");
+            System.out.println("2. Cambiar de AM a FM/FM a AM");
             System.out.println("3. Avanzar la emisora");
             System.out.println("4. Retroceder la emisora");
-            System.out.println("5. Guardar Emisora");
-            System.out.println("6. Seleccionar Emisora de algun boton");
+            System.out.println("5. Guardar emisora");
+            System.out.println("6. Seleccionar emisora de algun boton");
             System.out.println("7. Salir");
-            System.out.println("\n************ Porfavor eliga la opcion que desea ejecutar **********\n");
+            System.out.println("\n************ Porfavor elija la opcion que desea ejecutar **********\n");
             tmpTexto = scan.nextLine();
             //Se verifica que el número que dio el usuario fue valido
             isNumeric = tmpTexto.chars().allMatch( Character::isDigit );
