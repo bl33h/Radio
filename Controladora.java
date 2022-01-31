@@ -15,7 +15,7 @@ public class Controladora{
         String[] emisorasGuardadas = new String[12];
         int numBoton;
         int numMenu;
-        int numMenu1;
+        int numBoton1;
         String salir;
         Vista miVista = new Vista();
         Carro miCarro = new Carro();
@@ -24,7 +24,6 @@ public class Controladora{
         numMenu = -1;
         while(numMenu != 7){
             numMenu = miVista.menu();
-            numMenu1 = -1;
             switch (numMenu) {
                 case 1: // Encender / apagar radio
                     miCarro.encenderApagar();
@@ -71,7 +70,9 @@ public class Controladora{
                 break;
                 case 6: // Seleccionar Emisora de algun boton
                     if(miCarro.comprobarEncendida() == true){
-                            miCarro.seleccionarEmisoraGuardada(numMenu1);
+                        numBoton1 = 0;
+                            miCarro.seleccionarEmisoraGuardada(numBoton1);
+                        numBoton1++;
                     }
                     else{
                         miVista.mensaje("Su radio se encuentra apagada, por favor prenderla para usar esta opcion");
