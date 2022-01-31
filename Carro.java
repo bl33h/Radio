@@ -1,13 +1,12 @@
 /**
  * Copyright (C), 2022-2023, FabianJuarez SaraEcheverria
  * FileName: Vista
- * Author:   Fabián Juárez , Sara Echeverria
+ * Author:   Fabian Juarez , Sara Echeverria
  * Date:     30/01/2022
  * @author Fabian Juarez y Sara Echeverria
  */
-import java.util.ArrayList;
 
-public class Carro implements Radio{
+public class Carro implements Radio{ // Clase que implementa la interfaz radio
     private boolean encendido;
     private boolean tipoSenal;
     private float AMactual = 500 ;
@@ -18,6 +17,11 @@ public class Carro implements Radio{
         encendido = false;
         tipoSenal = false;
     }
+
+    /**
+     * Este metodo se encarga de encender y apagar la radio.
+     * @return void
+    */
     @Override
     public void encenderApagar() {
         if(encendido == false){
@@ -28,11 +32,21 @@ public class Carro implements Radio{
         }
     }
 
+    /**
+     * Este metodo se encarga de comprobar que la radio
+     * se encuentre encenedida para usar las funciones respectivas.
+     * @return boolean
+    */
     @Override
     public boolean comprobarEncendida() {
         return encendido;
     }
 
+    /**
+     * Este metodo permite subir la emisora de 10 en caso de ser AM
+     * y de 0.2 en caso de ser FM.
+     * @return void
+    */
     @Override
     public void subirEmisora() {
         if(tipoSenal){
@@ -53,6 +67,11 @@ public class Carro implements Radio{
         }
     }
 
+    /**
+     * Este metodo permite bajar la emisora de 10 en caso de ser AM
+     * y de 0.2 en caso de ser FM.
+     * @return void
+    */
     @Override
     public void bajarEmisora() {
         if(tipoSenal){
@@ -73,6 +92,11 @@ public class Carro implements Radio{
         }
     }
 
+    /**
+     * Este metodo permite cambiar el tipo de senal de AM a FM
+     * y viceversa.
+     * @return String
+    */
     @Override
     public String cambiarSenal(Boolean opcion) {
         String texto = "";
@@ -87,6 +111,11 @@ public class Carro implements Radio{
         return texto;
     }
 
+    /**
+     * Este metodo permite obtener
+     * la emisora que se sintoniza en el momento.
+     * @return float
+    */
     @Override
     public float getEmisoraActual() {
         float emisoraAct;
@@ -99,11 +128,21 @@ public class Carro implements Radio{
         return emisoraAct;
     }
 
+    /**
+     * Este metodo permite obtener
+     * el tipo de senal que se esta sintonizando.
+     * @return Boolean
+    */
     @Override
     public Boolean getTipoSenal() {
         return tipoSenal;
     }
 
+    /**
+     * Este metodo permite guardar la emisora que se sintoniza
+     * en dicho instante.
+     * @return String
+    */
     @Override
     public String guardarEmisoraActual(int numBoton) {
         String emisora = "";
@@ -122,6 +161,11 @@ public class Carro implements Radio{
         return texto;
     }
 
+    /**
+     * Este metodo permite seleccionar una emisora
+     * guardada.
+     * @return String
+    */
     @Override
     public String seleccionarEmisoraGuardada(int numBoton) {
         String senal = "";

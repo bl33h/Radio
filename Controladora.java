@@ -20,7 +20,7 @@ public class Controladora{
         Vista miVista = new Vista();
         Carro miCarro = new Carro();
 
-        miVista.bienvenida();
+        miVista.bienvenida(); // Despliegue del menu principal
         numMenu = -1;
         while(numMenu != 7){
             numMenu = miVista.menu();
