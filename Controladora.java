@@ -61,8 +61,9 @@ public class Controladora{
                 break;
                 case 5: // Guardar Emisora
                     if(miCarro.comprobarEncendida() == true){
-                            numMenu1 = miVista.menu1();
-                            miCarro.guardarEmisoraActual(numMenu1);
+                        numBoton = 0;
+                        miVista.mensaje(miCarro.guardarEmisoraActual(numBoton));
+                        numBoton++;
                     }
                     else{
                         miVista.mensaje("Su radio se encuentra apagada, por favor prenderla para usar esta opcion");
@@ -70,7 +71,6 @@ public class Controladora{
                 break;
                 case 6: // Seleccionar Emisora de algun boton
                     if(miCarro.comprobarEncendida() == true){
-                            numMenu1 = miVista.menu1();
                             miCarro.seleccionarEmisoraGuardada(numMenu1);
                     }
                     else{
