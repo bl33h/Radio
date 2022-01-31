@@ -10,8 +10,8 @@ import java.util.ArrayList;
 public class Carro implements Radio{
     private boolean encendido;
     private boolean tipoSenal;
-    private float AMactual;
-    private float FMactual;
+    private float AMactual = 500 ;
+    private float FMactual = 80.7;
     private String[] emisorasGuardadas = new String[12];
     private int numBoton;
     public Carro(){
@@ -36,12 +36,47 @@ public class Carro implements Radio{
 
     @Override
     public void subirEmisora() {
-
+        if(tipoSenal){
+            if(AMactual!= 500){
+                AMactual += 10;
+                texto = "Se han sumado 10 a la frecuencia";
+            }
+            else{
+                AMactual = 1610;
+            }
+        }
+        else{
+            if(FMactual!= 80.7){
+                FMactual += 0.2;
+                texto = "Se han sumado 0.2 a la frecuencia";
+            }
+            else{
+                 FMactual=(float)87.9;
+            }
+        }
     }
 
     @Override
     public void bajarEmisora() {
-        
+    String texto = "";
+        if(tipoSenal){
+            if(AMactual!= 500){
+                AMactual -= 10;
+                texto = "Se han restado 10 a la frecuencia";
+            }
+            else{
+                AMactual = 1610;
+            }
+        }
+        else{
+            if(FMactual!= 80.7){
+                FMactual -= 0.2;
+                texto = "Se han restado 0.2 a la frecuencia";
+            }
+            else{
+                 FMactual= 87.9;
+            }
+        }
     }
 
     @Override
@@ -88,6 +123,6 @@ public class Carro implements Radio{
 
     @Override
     public String seleccionarEmisoraGuardada(int numBoton) {
-        return "FM";
+        return "Se ha guardado la emisora: ";
     }
 }
