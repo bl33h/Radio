@@ -17,7 +17,7 @@ public class Vista{
         scan = new Scanner(System.in);
     }
 
-    public int menu(){
+    public int menu(){ //Menu principal para que el usuario eliga la opcion a realizar
         String salir = "";
         int numMenu = 0;
         String tmpTexto = "";

@@ -44,7 +44,14 @@ public class Controladora{
                 break;
                 case 3: // Avanzar la emisora
                     if(miCarro.comprobarEncendida() == true){
-
+                        if(miCarro.getTipoSenal()==true){
+                            miCarro.subirEmisora();
+                            miVista.mensaje(miCarro.getEmisoraActual()+"AM");
+                        }
+                        else{
+                            miCarro.subirEmisora();
+                            miVista.mensaje(miCarro.getEmisoraActual()+"FM");
+                        }
                     }
                     else{
                         miVista.mensaje("Su radio se encuentra apagada, por favor prenderla para usar esta opcion");
@@ -52,7 +59,14 @@ public class Controladora{
                 break;
                 case 4: // Retroceder la emisora
                     if(miCarro.comprobarEncendida() == true){
-
+                        if(miCarro.getTipoSenal()==true){
+                            miCarro.bajarEmisora();
+                            miVista.mensaje(miCarro.getEmisoraActual()+"AM");
+                        }
+                        else{
+                            miCarro.bajarEmisora();
+                            miVista.mensaje(miCarro.getEmisoraActual()+"FM");
+                        }
                     }
                     else{
                         miVista.mensaje("Su radio se encuentra apagada, por favor prenderla para usar esta opcion");
@@ -71,7 +85,7 @@ public class Controladora{
                 case 6: // Seleccionar Emisora de algun boton
                     if(miCarro.comprobarEncendida() == true){
                         numBoton1 = 0;
-                            miCarro.seleccionarEmisoraGuardada(numBoton1);
+                        miVista.mensaje(miCarro.seleccionarEmisoraGuardada(numBoton1));
                         numBoton1++;
                     }
                     else{

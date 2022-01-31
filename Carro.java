@@ -17,7 +17,6 @@ public class Carro implements Radio{
     public Carro(){
         encendido = false;
         tipoSenal = false;
-
     }
     @Override
     public void encenderApagar() {
@@ -36,11 +35,9 @@ public class Carro implements Radio{
 
     @Override
     public void subirEmisora() {
-        String texto = "";
         if(tipoSenal){
             if(AMactual!= 500){
                 AMactual += 10;
-                texto = "Se han sumado 10 a la frecuencia";
             }
             else{
                 AMactual = 1610;
@@ -49,7 +46,6 @@ public class Carro implements Radio{
         else{
             if(FMactual!= 80.7){
                 FMactual += 0.2;
-                texto = "Se han sumado 0.2 a la frecuencia";
             }
             else{
                 FMactual=(float)87.9;
@@ -59,11 +55,9 @@ public class Carro implements Radio{
 
     @Override
     public void bajarEmisora() {
-    String texto = "";
         if(tipoSenal){
             if(AMactual!= 500){
                 AMactual -= 10;
-                texto = "Se han restado 10 a la frecuencia";
             }
             else{
                 AMactual = 1610;
@@ -72,7 +66,6 @@ public class Carro implements Radio{
         else{
             if(FMactual!= 80.7){
                 FMactual -= 0.2;
-                texto = "Se han restado 0.2 a la frecuencia";
             }
             else{
                 FMactual=(float)87.9;
@@ -96,7 +89,14 @@ public class Carro implements Radio{
 
     @Override
     public float getEmisoraActual() {
-        return numBoton;
+        float emisoraAct;
+        if(tipoSenal){
+            emisoraAct = AMactual;
+        }
+        else{
+            emisoraAct = FMactual;
+        }
+        return emisoraAct;
     }
 
     @Override
@@ -117,26 +117,24 @@ public class Carro implements Radio{
             emisora = String.valueOf(this.FMactual);
             senal = "FM";
         }
-        emisorasGuardadas.add(emisora);
+        emisorasGuardadas[numBoton] = emisora;
         texto = "Se ha guardado la emisora: " + emisora + senal;
         return texto;
     }
 
     @Override
     public String seleccionarEmisoraGuardada(int numBoton) {
-        String emisora = "";
         String senal = "";
         String texto = "";
         Float emisoraGuardada;
-        emisorasGuardadas[numBoton] = emisora;
-        emisoraGuardada =Float.valueOf(emisora);
+        emisoraGuardada =Float.valueOf(emisorasGuardadas[numBoton]);
         if(emisoraGuardada >=500){
             senal = "AM";
         }
             else{
             senal = "FM";
         }
-        emisorasGuardadas[numBoton] = emisora;
-        return "Se ha guardado la emisora: " + emisora + senal ;
+         texto = "Se ha seleccionado la emisora: " + emisorasGuardadas[numBoton] + senal ;
+         return texto;
     }
 }
